@@ -33,9 +33,11 @@ const AppLayout = ({ children }) => {
               <NavLink className="nav-link" to="/dashboard">
                 Dashboard
               </NavLink>
+              {(user?.role === 'dietitian' || user?.role === 'admin') && (
               <NavLink className="nav-link" to="/clients">
                 Clients
-              </NavLink>
+             </NavLink>
+              )}
               <NavLink className="nav-link" to="/meal-plans">
                 Meal Plans
               </NavLink>

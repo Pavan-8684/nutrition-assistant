@@ -25,7 +25,10 @@ const App = () => (
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="/dashboard" element={protectedPage(<Dashboard />)} />
-        <Route path="/clients" element={protectedPage(<ClientProfile />)} />
+       <Route
+          path="/clients"
+          element={protectedPage(<ClientProfile />, ['dietitian', 'admin'])}
+       />
         <Route path="/meal-plans" element={protectedPage(<MealPlanBuilder />)} />
         <Route path="/progress" element={protectedPage(<ProgressCharts />)} />
         <Route path="/admin" element={protectedPage(<AdminPanel />, ['admin'])} />
